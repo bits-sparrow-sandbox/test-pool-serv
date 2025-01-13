@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "put your build code"
+echo "put your build code here"
