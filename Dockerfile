@@ -16,4 +16,4 @@ RUN chmod +x /opt/bin/entrypoint.sh
 
 EXPOSE 80
 
-ENTRYPOINT ["exec", "/opt/bin/main"]
+ENTRYPOINT ["/bin/exec", "/opt/bin/main"]
