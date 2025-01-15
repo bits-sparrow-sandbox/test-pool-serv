@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine AS builder
+FROM golang:1.21-alpine
 
 WORKDIR /opt/build
 
@@ -9,8 +9,10 @@ RUN go mod download
 RUN go build -o main .
 
 RUN mkdir -p /opt/bin/
-COPY --chown=0:0 --from=builder /opt/build/main /opt/bin/
-COPY --chown=0:0 --from=builder /opt/build/entrypoint.sh /opt/bin/
+RUN cp /opt/build/main /opt/bin/
+RUN cp /opt/build/entrypoint.sh /opt/bin/
+RUN chmod +x /opt/bin/main
+RUN chmod +x /opt/bin/entrypoint.sh
 
 EXPOSE 80
 
