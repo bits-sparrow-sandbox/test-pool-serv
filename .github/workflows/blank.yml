@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - develop
-      - 'v*'
+      - '[0-9.]*'
 
 env:
   REGISTRY: ghcr.io
